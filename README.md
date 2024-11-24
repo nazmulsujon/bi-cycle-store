@@ -1,15 +1,6 @@
-# Express.js | TypeScript | Mongoose Boilerplate
+# 🚴 Bi-Cycle Store (B4A2V4)
 
-This repository provides a boilerplate for building scalable and maintainable backend applications using **Express.js**, **TypeScript**, and **Mongoose**. It includes pre-configured tools like ESLint, Prettier, and `ts-node-dev` for a smooth development experience.
-
-## Features
-
-- **TypeScript**: Type safety and modern JavaScript features.
-- **Express.js**: Fast, unopinionated, minimalist web framework.
-- **Mongoose**: Elegant MongoDB object modeling for Node.js.
-- **ESLint and Prettier**: Enforces coding standards and format consistency.
-- **Environment Configuration**: Manage sensitive data with `dotenv`.
-- **Folder Structure**: Well-organized for scalability and readability.
+An Express.js application with TypeScript and MongoDB, designed to manage a bicycle store. This project enables CRUD operations for bicycles and orders, ensures data validation using Mongoose, and includes features like inventory management and revenue calculation.
 
 ## Project Structure
 
@@ -22,88 +13,102 @@ src/
 ├── services/      # Business logic
 ├── utils/         # Utility functions
 ```
-## Prerequisites
-
-Ensure you have the following installed:
-
-- **Node.js** (version 16 or higher)
-- **Yarn** or **npm**
-- **MongoDB**
 
 ---
 
-## Getting Started
+## Features 🚀
 
-### Clone the Repository
+### Product (Bicycle) Management:
 
-```bash
-git clone https://github.com/nazmulsujon/express-js-boilerplate.git
-cd express-js-boilerplate
-```
-## Install Dependencies
-### Using Yarn:
-```bash
-yarn install
-```
+- **Create a Bicycle:** Add new bicycles with detailed information.
+- **Get All Bicycles:** Retrieve a list of bicycles, filterable by name, brand, or type.
+- **Get a Specific Bicycle:** Fetch details of a specific bicycle by ID.
+- **Update a Bicycle:** Modify details of an existing bicycle.
+- **Delete a Bicycle:** Remove a bicycle from the inventory.
 
-### Or using npm:
-```bash
-npm install 
-```
-## Environment Variables
-Create a .env file in the root directory and add the following variables:
+### Order Management:
 
-```bash
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/your_database_name
-Run the development server
-Using Yarn:
-yarn dev
+- **Place an Order:**
+  - Reduce the product inventory upon order placement.
+  - Handle insufficient stock gracefully.
+- **Calculate Revenue:** Use MongoDB aggregation pipeline to calculate total revenue from all orders.
 
-Or using npm:
-npm run dev
+---
 
-The server will start on http://localhost:5000.
+## Installation & Setup ⚙️
 
-Build for production
-Using Yarn:
-yarn build
+Follow the steps below to run the project locally:
 
-Or using npm:
-npm run build
-```
-## Available Scripts
-```bash
-yarn dev / npm run dev: Start the development server with hot-reloading.
-yarn lint / npm run lint: Lint the code using ESLint.
-yarn build / npm run build: Compile TypeScript to JavaScript.
-```
-## API Endpoints
-```bash
-Example Routes
-GET /api/example: Fetch example data.
-POST /api/example: Create new data.
-Test Routes
-GET /api/test: Test the API.
-POST /api/test: Test POST functionality.
-```
-### Tools and Libraries
-**TypeScript**
-**Express.js**
-**Mongoose**
-**ESLint**
-**Prettier**
-**ts-node-dev**
-**dotenv**
+### Prerequisites:
 
-Contribution
-Feel free to submit issues or pull requests. Any contributions are highly appreciated!
+- [Node.js](https://nodejs.org/en/download/) installed on your machine.
+- [MongoDB](https://www.mongodb.com/try/download/community) set up locally or use a MongoDB cloud instance.
+- A package manager like npm or yarn.
 
+### Steps:
 
+1. Clone the repository:  
+   template string start  
+   git clone https://github.com/your-username/bicycle-store.git  
+   template string end
 
+2. Navigate to the project directory:  
+   template string start  
+   cd bicycle-store  
+   template string end
 
+3. Install dependencies:  
+   template string start  
+   npm install  
+   template string end  
+   OR  
+   template string start  
+   yarn install  
+   template string end
 
+4. Create an `.env` file in the root directory and add the following:  
+   template string start  
+   PORT=5000  
+   MONGO_URI=mongodb://localhost:27017/bicycle-store  
+   template string end
 
+5. Start the server in development mode:  
+   template string start  
+   npm run dev  
+   template string end  
+   OR  
+   template string start  
+   yarn dev  
+   template string end
 
+---
 
+## API Endpoints 📃
 
+### Product Endpoints:
+
+- **Create a Bicycle:** `POST /api/products`
+- **Get All Bicycles:** `GET /api/products`
+- **Get a Specific Bicycle:** `GET /api/products/:productId`
+- **Update a Bicycle:** `PUT /api/products/:productId`
+- **Delete a Bicycle:** `DELETE /api/products/:productId`
+
+### Order Endpoints:
+
+- **Place an Order:** `POST /api/orders`
+- **Calculate Revenue:** `GET /api/orders/revenue`
+
+---
+
+## Technologies Used 🛠️
+
+- **Backend Framework:** Express.js with TypeScript
+- **Database:** MongoDB with Mongoose
+- **Validation:** Mongoose Schema
+- **Environment Variables:** dotenv
+
+---
+
+## License
+
+This project is licensed under the MIT License.

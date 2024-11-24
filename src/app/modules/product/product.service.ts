@@ -3,11 +3,7 @@ import { ProductModel } from './product.model';
 
 const createProductInDB = async (product: Product) => {
   const result = await ProductModel.create(product);
-  return {
-    ...result.toObject(),
-    createdAt: result.createdAt,
-    updatedAt: result.updatedAt,
-  };
+  return result.toObject();
 };
 
 const getProductsFromDB = async (searchTerm?: string) => {

@@ -9,18 +9,14 @@ const createProduct = async (
   next: NextFunction,
 ) => {
   try {
-    const parsedByZod = createProductSchema.parse(req.body); // Validate input
-    console.log('parsedByZod', parsedByZod);
+    // Validate input using Zod
+    const parsedProduct = createProductSchema.parse(req.body);
+    const product = await ProductServices.createProductInDB(parsedProduct);
 
-    const product = await ProductServices.createProductInDB(parsedByZod);
     res.status(201).json({
       message: 'Bicycle created successfully',
       success: true,
-      data: {
-        ...product,
-        createdAt: product.createdAt,
-        updatedAt: product.updatedAt,
-      },
+      data: product,
     });
   } catch (error) {
     console.log(error);
@@ -42,7 +38,7 @@ const getAllProducts = async (
       data: products,
     });
   } catch (error) {
-    next(error);
+    next(error); // Forward error to middleware
   }
 };
 
@@ -61,7 +57,7 @@ const getSingleProduct = async (
       data: product,
     });
   } catch (error) {
-    next(error);
+    next(error); // Forward error to middleware
   }
 };
 
@@ -71,21 +67,25 @@ const updateProduct = async (
   next: NextFunction,
 ) => {
   try {
-    updateProductSchema.parse(req.body); // Validate input
+    // Validate input using Zod
+    const parsedProduct = updateProductSchema.parse(req.body);
+    const productId = req.params.productId;
+
     const product = await ProductServices.updateProductInDB(
-      req.params.productId,
-      req.body,
+      productId,
+      parsedProduct,
     );
+
     res.status(200).json({
       message: 'Bicycle updated successfully',
       success: true,
       data: {
         ...product,
-        updatedAt: new Date().toISOString(), // Update updatedAt timestamp
+        updatedAt: new Date().toISOString(),
       },
     });
   } catch (error) {
-    next(error);
+    next(error); // Forward error to middleware
   }
 };
 
