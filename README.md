@@ -66,7 +66,7 @@ Follow the steps below to run the project locally:
 
 4. Create an `.env` file in the root directory and add the following:  
 ```
-  PORT=5000
+PORT=5000
 DATABASE_URL=mongodb+srv://<your-username>:<your-password>T@cluster0.pdzsrjb.mongodb.net/bi-cycle-store?retryWrites=true&w=majority&appName=Cluster0
 ```
 
