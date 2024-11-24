@@ -47,7 +47,7 @@ Follow the steps below to run the project locally:
 
 1. Clone the repository:  
 ```
-   git clone https://github.com/your-username/bicycle-store.git  
+   git clone https://github.com/nazmulsujon/bi-cycle-store.git  
 ```
 
 2. Navigate to the project directory:  
