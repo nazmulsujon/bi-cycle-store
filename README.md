@@ -44,42 +44,42 @@ Follow the steps below to run the project locally:
 - A package manager like npm or yarn.
 
 ### Steps:
-```
+
 1. Clone the repository:  
-   template string start  
+```
    git clone https://github.com/your-username/bicycle-store.git  
-   template string end
+```
 
 2. Navigate to the project directory:  
-   template string start  
+ ```
    cd bicycle-store  
-   template string end
+ ```
 
 3. Install dependencies:  
-   template string start  
+```
    npm install  
-   template string end  
+```
    OR  
-   template string start  
+ ``` 
    yarn install  
-   template string end
+```
 
 4. Create an `.env` file in the root directory and add the following:  
-   template string start  
+```
    PORT=5000  
    MONGO_URI=mongodb://localhost:27017/bicycle-store  
-   template string end
+```
 
 5. Start the server in development mode:  
-   template string start  
-   npm run dev  
-   template string end  
-   OR  
-   template string start  
-   yarn dev  
-   template string end
-
 ```
+   npm run dev  
+```
+   OR  
+```
+   yarn dev  
+```
+
+
 
 ## API Endpoints 📃
 
@@ -96,7 +96,7 @@ Follow the steps below to run the project locally:
 - **Place an Order:** `POST /api/orders`
 - **Calculate Revenue:** `GET /api/orders/revenue`
 
-```
+
 
 ## Technologies Used 🛠️
 
@@ -105,6 +105,6 @@ Follow the steps below to run the project locally:
 - **Validation:** Mongoose Schema with Zod.
 - **Environment Variables:** dotenv
 
-```
+
 
 
