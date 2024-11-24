@@ -1,6 +1,6 @@
-# 🚴 Bi-Cycle Store (B4A2V4)
+# 🚴 Bi-Cycle Store
 
-An Express.js application with TypeScript and MongoDB, designed to manage a bicycle store. This project enables CRUD operations for bicycles and orders, ensures data validation using Mongoose, and includes features like inventory management and revenue calculation.
+An Express.js application with TypeScript and MongoDB, designed to manage a bicycle store. This project enables CRUD operations for bicycles and orders, ensures data validation using Mongoose and Zod, and includes features like inventory management and revenue calculation.
 
 ## Project Structure
 
@@ -13,8 +13,6 @@ src/
 ├── services/      # Business logic
 ├── utils/         # Utility functions
 ```
-
----
 
 ## Features 🚀
 
@@ -31,9 +29,9 @@ src/
 - **Place an Order:**
   - Reduce the product inventory upon order placement.
   - Handle insufficient stock gracefully.
-- **Calculate Revenue:** Use MongoDB aggregation pipeline to calculate total revenue from all orders.
+- **Calculate Revenue:** Using MongoDB aggregation pipeline to calculate total revenue from all orders.
 
----
+
 
 ## Installation & Setup ⚙️
 
@@ -46,7 +44,7 @@ Follow the steps below to run the project locally:
 - A package manager like npm or yarn.
 
 ### Steps:
-
+```
 1. Clone the repository:  
    template string start  
    git clone https://github.com/your-username/bicycle-store.git  
@@ -81,7 +79,7 @@ Follow the steps below to run the project locally:
    yarn dev  
    template string end
 
----
+```
 
 ## API Endpoints 📃
 
@@ -98,17 +96,15 @@ Follow the steps below to run the project locally:
 - **Place an Order:** `POST /api/orders`
 - **Calculate Revenue:** `GET /api/orders/revenue`
 
----
+```
 
 ## Technologies Used 🛠️
 
 - **Backend Framework:** Express.js with TypeScript
 - **Database:** MongoDB with Mongoose
-- **Validation:** Mongoose Schema
+- **Validation:** Mongoose Schema with Zod.
 - **Environment Variables:** dotenv
 
----
+```
 
-## License
 
-This project is licensed under the MIT License.
