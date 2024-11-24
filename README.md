@@ -66,8 +66,8 @@ Follow the steps below to run the project locally:
 
 4. Create an `.env` file in the root directory and add the following:  
 ```
-   PORT=5000  
-   MONGO_URI=mongodb://localhost:27017/bicycle-store  
+  PORT=5000
+DATABASE_URL=mongodb+srv://<your-username>:<your-password>T@cluster0.pdzsrjb.mongodb.net/bi-cycle-store?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 5. Start the server in development mode:  
